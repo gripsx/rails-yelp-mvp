@@ -1,1 +1,11 @@
-<h1>new review</h1>
+<h1>Leave a review at <%= @restaurant.name %></h1>
+
+<div class="review-form w-50">
+<%= simple_form_for([@restaurant, @review])do |f| %>
+  <%= f.collection_radio_buttons :rating, [[1], [2], [3], [4], [5]], :first, :last, item_wrapper_tag: false, boolean_style: :inline do |b| %>
+  <%= b.radio_button + b.label {'hello'} %>
+  <% end %>
+  <%= f.input :content %>
+  <%= f.submit %>
+<% end %>
+</div>

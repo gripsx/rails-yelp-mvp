@@ -1,1 +1,18 @@
-<h1>this is the show (find id) of restaurant</h1>
+<h1><%= @restaurant.name %></h1>
+<p><%= @restaurant.address %></p>
+<p><small><%= @restaurant.phone_number %></small></p>
+
+<p><%= link_to "Leave a Review", new_restaurant_review_path(@restaurant) %></p>
+
+
+<p><strong>Reviews</strong></p>
+<ul class="list-group w-50">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %> <br> <%= review.rating %> ⭐ </li>
+  <% end %>
+</ul>
+<br>
+
+<div>
+  <%= link_to "Back to restaurants", restaurants_path %>
+</div>

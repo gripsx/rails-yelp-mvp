@@ -1,1 +1,13 @@
-<h1>this is the index</h1>
+<h1>Restaurants</h1>
+
+<div class ="restaurants w-50">
+<ul class="list-group">
+  <% @restaurants.each do |restaurant|  %>
+  <li class="list-group-item border-0">
+    <%= link_to restaurant.name, restaurant %>
+  </li>
+  <% end %>
+</ul>
+</div>
+<br>
+<%= link_to "New restaurant", new_restaurant_path %>

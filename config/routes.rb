@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   # A visitor can add a new review to a restaurant
   # restaurant_reviews POST   /restaurants/:restaurant_id/reviews(.:format)     reviews#create
   # new_restaurant_review GET    /restaurants/:restaurant_id/reviews/new(.:format) reviews#new
-  get 'restaurants/:restaurant_id/reviews/new', to: 'reviews#new'
-  post 'restaurants/:restaurant_id/reviews', to: 'reviews#create'
+  get 'restaurants/:restaurant_id/reviews/new', to: 'reviews#new', as: :new_restaurant_review
+  post 'restaurants/:restaurant_id/reviews', to: 'reviews#create', as: :restaurant_reviews
 end
