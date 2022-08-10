@@ -11,14 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_08_10_155442) do
-  create_table "ratings", force: :cascade do |t|
-    t.text "content"
-    t.integer "restaurant_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["restaurant_id"], name: "index_ratings_on_restaurant_id"
-  end
-
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -37,6 +29,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_10_155442) do
     t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
   end
 
-  add_foreign_key "ratings", "restaurants"
   add_foreign_key "reviews", "restaurants"
 end
