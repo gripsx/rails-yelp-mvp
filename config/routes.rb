@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   # A visitor can see the details of a restaurant, with all the reviews related to the restaurant.
   get 'restaurants/:id', to: 'restaurants#show', as: :restaurant
   # A visitor can add a new review to a restaurant
-  # get 'restaurants/:id/reviews/new'
-  # post 'restaurants/:id/reviews'
+  # restaurant_reviews POST   /restaurants/:restaurant_id/reviews(.:format)     reviews#create
+  # new_restaurant_review GET    /restaurants/:restaurant_id/reviews/new(.:format) reviews#new
+  get 'restaurants/:restaurant_id/reviews/new', to: 'reviews#new'
+  post 'restaurants/:restaurant_id/reviews', to: 'reviews#create'
 end
